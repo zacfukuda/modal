@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Modal</title>
+	<link rel="stylesheet" href="./style-1.0.css">
+</head>
+<body>
+
+<a href="#modal1" class="modal-button">Click me</a>
+<button href="#modal1" class="modal-button">Click me</button>
+
+<div id="modal1" class="modal">
+	<div class="modal-content">
+		<h1>This is Modal Content</h1>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+	</div><!-- .modal_content -->
+</div><!-- #modal1.modal -->
+
+<script src="modal-1.0.js"></script>
+<script>
+	var modalButtons = document.querySelectorAll('.modal-button');
+	modalButtons.forEach(button => {
+		new Modal(button, {
+			selector: null,
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+  background: rgba(0,0,0, .7);
+}
+
+.modal-content {
+	position: relative;
+  background-color: #fff;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.modal-close {
+  position: absolute;
+}
+
+.modal-close {
+  top: 25px;
+  right: 25px;
+}
