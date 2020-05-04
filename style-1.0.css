@@ -14,11 +14,6 @@
 
 .modal-content {
 	position: relative;
-  background-color: #fff;
-  margin: auto;
-  padding: 0;
-  width: 90%;
-  max-width: 1200px;
 }
 
 .modal-close {
@@ -28,4 +23,8 @@
 .modal-close {
   top: 25px;
   right: 25px;
+}
+
+.modal-button {
+	cursor: pointer;
 }
