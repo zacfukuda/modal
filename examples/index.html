@@ -3,26 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Modal</title>
-	<link rel="stylesheet" href="./style-1.0.css">
+	<link rel="stylesheet" href="../dist/modal.css">
+	<link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-<a href="#modal1" class="modal-button">Click me</a>
-<button href="#modal1" class="modal-button">Click me</button>
+<h1>No configuration</h1>
+<a class="modal-button" data-for="modal1">Click me</a>
+<button class="modal-button" data-for="modal1">Click me</button>
 
 <div id="modal1" class="modal">
-	<div class="modal-content">
+	<div class="modal-content html">
 		<h1>This is Modal Content</h1>
 		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		<button type="button" data-type="close">Close</button>
 	</div><!-- .modal_content -->
 </div><!-- #modal1.modal -->
 
-<script src="modal-1.0.js"></script>
+<h1>Image (small)</h1>
+<a href="" class="modal-button" data-for="modal2">Click me</a>
+<div id="modal2" class="modal">
+	<div class="modal-content">
+		<img src="./img/franklin.jpeg" alt="Benjamin Franklin">
+	</div>
+</div>
+
+<script src="../src/index.js"></script>
 <script>
-	var modalButtons = document.querySelectorAll('.modal-button');
-	modalButtons.forEach(button => {
-		new Modal(button, {
-			selector: null,
+	var modals = document.querySelectorAll('.modal');
+	modals.forEach(modal => {
+		new Modal(modal, {
+			padding: 35,
 		});
 	});
 </script>

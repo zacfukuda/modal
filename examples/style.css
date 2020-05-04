@@ -1,0 +1,10 @@
+/**
+ * Stylesheet for example
+ */
+@charset 'utf-8';
+
+.modal-content.html {
+  max-width: 800px;
+  background: #fff;
+  padding: 60px;
+}

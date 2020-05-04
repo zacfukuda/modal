@@ -1,8 +1,18 @@
 const MODAL_CONFIG = {
+	annimation: false,
+	annimationType: 'fade',
 	appendClose: true,
+	className: {
+		active: 'active',
+		close: 'modal-close',
+	},
 	fade: false,
 	fadeSpeed: 500,
-	padding: 0,
+	scroll: false,
+	style: {
+		background: null,
+		padding: 0,
+	}
 }
 
 class Modal {

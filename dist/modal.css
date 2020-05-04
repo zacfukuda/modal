@@ -12,8 +12,10 @@
   box-sizing: border-box;
   overflow: auto;
 }
+
+/* Ponsitions content centered */
 .modal.active {
-  display: flex; /* Ponsitions content centered */
+  display: flex; 
   align-items: center;
   justify-content: center;
 }
@@ -29,14 +31,5 @@
   cursor: center;
 }
 
-/* Button—or anchor—to open modal */
+/* Button/anchor to open modal */
 .modal-button { cursor: pointer; }
-
-
-
-/** TEST **/
-.modal-content.html {
-  max-width: 800px;
-  background: #fff;
-  padding: 60px;
-}
