@@ -6,8 +6,10 @@ const MODAL_CONFIG = {
 		active: 'active',
 		close: 'modal-close',
 	},
+	closeCallback: null,
 	fade: false,
 	fadeSpeed: 500,
+	openCallback: null,
 	scroll: false,
 	style: {
 		background: null,
@@ -23,7 +25,8 @@ class Modal {
 		this.config = this.configure(config);
 		this.content = modal.querySelector('.modal-content');
 		this.buttons = this.getButton();
-		this.closeButton = this.makeCloseButton();		
+		this.closeButton = this.makeCloseButton();
+
 		this.init();
 	}
 
@@ -59,6 +62,7 @@ class Modal {
 		e.stopPropagation();
 
 		this.modal.classList.add('active');
+		this.config.openCallback();
 	}
 
 	close(e) {
@@ -66,6 +70,7 @@ class Modal {
 		e.stopPropagation();
 
 		this.modal.classList.remove('active');
+		this.config.closeCallback();
 	}
 
 	getButton() {
@@ -92,3 +97,5 @@ class Modal {
 		}
 	}
 }
+
+module.exports = Modal;

@@ -28,12 +28,19 @@
 	</div>
 </div>
 
-<script src="../src/index.js"></script>
+<script src="../dist/modal.js"></script>
 <script>
 	var modals = document.querySelectorAll('.modal');
 	modals.forEach(modal => {
 		new Modal(modal, {
+			closeCallback: function() {
+				console.log('Close!');
+			},
+			openCallback: function() {
+				console.log('Open!');
+			},
 			padding: 35,
+
 		});
 	});
 </script>
