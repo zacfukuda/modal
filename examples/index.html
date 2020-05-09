@@ -33,14 +33,13 @@
 	var modals = document.querySelectorAll('.modal');
 	modals.forEach(modal => {
 		new Modal(modal, {
-			closeCallback: function() {
+			onOpen: function() {
 				console.log('Close!');
 			},
-			openCallback: function() {
+			onClose: function() {
 				console.log('Open!');
 			},
 			padding: 35,
-
 		});
 	});
 </script>

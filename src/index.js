@@ -1,18 +1,17 @@
 const MODAL_CONFIG = {
 	annimation: false,
+	annimationDuration: 300,
 	annimationType: 'fade',
 	appendClose: true,
 	className: {
 		active: 'active',
 		close: 'modal-close',
 	},
-	closeCallback: null,
-	fade: false,
-	fadeSpeed: 500,
-	openCallback: null,
+	onClose: null,
+	onOpen: null,
 	scroll: false,
 	style: {
-		background: null,
+		background: '',
 		padding: 0,
 	}
 }
@@ -62,7 +61,7 @@ class Modal {
 		e.stopPropagation();
 
 		this.modal.classList.add('active');
-		this.config.openCallback();
+		this.config.onOpen();
 	}
 
 	close(e) {
@@ -70,7 +69,7 @@ class Modal {
 		e.stopPropagation();
 
 		this.modal.classList.remove('active');
-		this.config.closeCallback();
+		this.config.onClose();
 	}
 
 	getButton() {
@@ -90,9 +89,15 @@ class Modal {
 	}
 
 	style() {
+		// Background
+		var b = this.config.style.background;
+		if (b) {
+			this.modal.style.background = b
+		}
+
 		// Padding
-		var p = this.config.padding;
-		if ( p ) {
+		var p = this.config.style.padding;
+		if (p) {
 			this.modal.style.padding = isNaN(p) ? p : p + 'px';
 		}
 	}
